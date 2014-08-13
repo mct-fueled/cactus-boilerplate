@@ -28,6 +28,6 @@
     "gulp-declare": "~0.2.0",
     "run-sequence": "~0.3.6",
     "connect-livereload": "~0.4.0",
-    "gulp-exec": "~2.1.0"
+    "gulp-shell": "~0.2.9"
   }
 }

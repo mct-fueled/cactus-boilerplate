@@ -17,7 +17,7 @@ var gulp = require('gulp'),
 	declare = require('gulp-declare'),
 	runSequence = require('run-sequence'),
 	connect = require('gulp-connect'),
-	exec = require('gulp-exec'),
+	shell = require('gulp-shell'),
 	webserver = require('gulp-webserver');
 
 
@@ -79,26 +79,15 @@ gulp.task('fonts', function() {
 		}));
 });
 
-gulp.task('webserver', function() {
-	//return gulp.exec("cacti serve");
-	exec('cactus serve');
-	//return gulp.src('public')
-		// .pipe(webserver({
-		// 	host: '127.0.0.1',
-		// 	livereload: true,
-		// 	directoryListing: false,
-		// 	port: 8000
-		// }));
-});
+gulp.task('webserver', shell.task([
+	"osascript -e 'tell application \"Terminal\" to do script \"cd ~/Sites/cacti && cactus serve\"'"
+]));
 
 gulp.task('default', ['webserver'], function() {
-	//livereload.listen();
 	gulp.watch(['source/assets/js/**/*.js'], ['scripts']);
 	gulp.watch('source/assets/css/**/*.scss', ['styles']);
 	gulp.watch('source/assets/images/**/*', ['images']);
 	gulp.watch('source/fonts/*', ['fonts']);
-
-	//gulp.watch('source/**').on('change', livereload.changed);
 });
 
 gulp.task('build', function() {
