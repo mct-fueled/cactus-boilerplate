@@ -80,7 +80,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('webserver', shell.task([
-	"osascript -e 'tell application \"Terminal\" to do script \"cd ~/Sites/cacti && cactus serve\"'"
+	"osascript -e 'tell application \"Terminal\" to do script \"cd " + process.cwd() + " && cactus serve\"'"
 ]));
 
 gulp.task('default', ['webserver'], function() {
