@@ -42,6 +42,10 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
+	// copy vendor folder as it is
+	gulp.src('source/assets/js/vendor/**/*.js')
+		.pipe(gulp.dest('static/js/vendor/'));
+
 	return gulp.src([
 			'source/assets/js/plugins/plugins.js',
 			'source/assets/js/g.js',
