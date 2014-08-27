@@ -5,11 +5,13 @@
 import subprocess
 from glob import glob
 
+
 def postBuild(site):
     for script in glob('%s/static/js/*js' % site.paths['build']):
         root_name = script.rsplit(',', 1)[0]
         dest = "%s.min.js" % root_name
         try:
-            subprocess.check_call(['java', '-jar', '/usr/local/lib/closure.jar', '--js', script, '--js_output_file', dest])
+            subprocess.check_call(
+                ['java', '-jar', '/usr/local/lib/closure.jar', '--js', script, '--js_output_file', dest])
         except subprocess.CalledProcessError:
             print 'JS Compile step failed.'
