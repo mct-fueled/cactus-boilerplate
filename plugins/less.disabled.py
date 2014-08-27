@@ -1,6 +1,7 @@
 import subprocess
 from glob import glob
 
+
 def postBuild(site):
     for filename in glob('%s/static/css/*less' % site.paths['build']):
         root_name = filename.rsplit('.', 1)[0]
