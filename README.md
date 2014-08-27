@@ -5,10 +5,12 @@ A standard boilerplate for use with Cactus
 
 ## Installation Steps
 
-1. Download/Clone this repo (duh)
-2. `cd` to the directory, and run `npm install`
-3. Run `gulp` in terminal
-4. Tinker away to your little heart's content.
+- Download/Clone this repo (duh)
+- `cd` to the directory, and run `npm install`
+- Run `easy_install pip; pip install -r requirements.txt`
+- Run `gulp` in terminal
+- Tinker away to your little heart's content.
+
 
 ## Troubleshooting
 
