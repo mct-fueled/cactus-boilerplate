@@ -13,7 +13,7 @@
 	<link rel="shortcut icon" href="{{ STATIC_URL }}/favicon.ico">
 	<link rel="stylesheet" href="{{ STATIC_URL }}/css/screen.css">
 
-	<script src="public/js/modernizr.js"></script>
+	<script src="{{ STATIC_URL }}/js/vendor/modernizr-2.6.2.min.js"></script>
 
 	{% block header %}
 	<title>Welcome</title>
@@ -35,7 +35,7 @@
 
 	{% block scripts %}
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
 		<script src="{{ STATIC_URL }}/js/main.js"></script>
 	{% endblock %}
 
